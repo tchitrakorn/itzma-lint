@@ -3,6 +3,7 @@
 <p align="center"> "Your Lint, Your Rules" </p>
 
 ![GitHub](https://img.shields.io/github/license/tchitrakorn/itzma-lint)
+![GitHub issues](https://img.shields.io/github/issues/tchitrakorn/itzma-lint)
 
 <h2>Overview</h1>
 
