@@ -1,13 +1,6 @@
 import ast
-from typing import NamedTuple
 import checks
-
-
-class Flake8ASTErrorInfo(NamedTuple):
-    line_number: int
-    offset: int
-    msg: str
-    cls: type
+from helpers import Flake8ASTErrorInfo
 
 
 class MCodingASTVisitor(ast.NodeVisitor):
