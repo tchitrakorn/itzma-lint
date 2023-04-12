@@ -3,11 +3,11 @@ from typing import NamedTuple
 from inflection import camelize, pluralize
 
 
-class Flake8ASTErrorInfo(NamedTuple):
-    line_number: int
-    offset: int
-    msg: str
-    cls: type
+#class Flake8ASTErrorInfo(NamedTuple):
+    #line_number: int
+    #offset: int
+    #msg: str
+    #cls: type
 
 
 class LocalImportsNotAllowed:
