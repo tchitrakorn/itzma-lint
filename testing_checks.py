@@ -3,7 +3,7 @@ from typing import NamedTuple
 from inflection import camelize, pluralize
 
 
-class Flake8ASTErrorInfo(NamedTuple):
+class Flake8ASTErrorInfo:
     line_number = None
     offset = None
     msg = None
