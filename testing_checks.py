@@ -3,18 +3,18 @@ from typing import NamedTuple
 from inflection import camelize, pluralize
 
 
-#class Flake8ASTErrorInfo(NamedTuple):
-    #line_number: int
-    #offset: int
-    #msg: str
-    #cls: type
+class Flake8ASTErrorInfo(NamedTuple):
+    line_number = None
+    offset = None
+    msg = None
+    cls = None
 
 
 class LocalImportsNotAllowed:
     msg = "IM local imports are not allowed inside a function"
 
     @classmethod
-    def check(cls, node: ast.FunctionDef, errors: list[Flake8ASTErrorInfo]) -> None:
+    def check(cls, node, errors) -> None:
         for child in ast.walk(node):
             if isinstance(child, (ast.Import, ast.ImportFrom)):
                 err = Flake8ASTErrorInfo(child.lineno, child.col_offset, cls.msg, cls)
@@ -26,7 +26,7 @@ class UnconventionalFunctionNamesNotAllowed:
     msg2 = "IM function names must start with a verb"
 
     @classmethod
-    def check(cls, node: ast.FunctionDef, errors: list[Flake8ASTErrorInfo]) -> None:
+    def check(cls, node, errors) -> None:
         for child in ast.walk(node):
             if isinstance(child, ast.FunctionDef):
                 func_name = child.name
@@ -40,7 +40,7 @@ class UnconventionalClassNamesNotAllowed:
     msg = "IM class names must be camel case with uppercase first letter"
 
     @classmethod
-    def check(cls, node: ast.ClassDef, errors: list[Flake8ASTErrorInfo]) -> None:
+    def check(cls, node, errors) -> None:
         for child in ast.walk(node):
             if isinstance(child, ast.ClassDef):
                 class_name = child.name
@@ -53,7 +53,7 @@ class UnconventionalVariableNamesNotAllowed:
     msg = "IM variable names must be plural if they are assigned to a list"
 
     @classmethod
-    def check(cls, node: ast.FunctionDef, errors: list[Flake8ASTErrorInfo]) -> None:
+    def check(cls, node, errors) -> None:
         for child in ast.walk(node):
             if isinstance(child, ast.Assign):  # check assignment
                 if isinstance(child.value, ast.List):  # if the value is a list
