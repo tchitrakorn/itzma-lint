@@ -1,4 +1,4 @@
-from src import testing_checks
+import testing_checks
 import ast
 
 

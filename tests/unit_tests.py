@@ -1,7 +1,7 @@
 #import sys
 #sys.path.append('../src')
-from src import testing_checks
-from src import helpers
+import testing_checks
+import helpers
 import ast
 
 
