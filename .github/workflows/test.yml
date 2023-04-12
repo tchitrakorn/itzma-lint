@@ -11,7 +11,7 @@ jobs:
     - name: Install requirements
       run: pip install -r requirements.txt
     - name: Run tests and collect coverage
-      run:  coverage run -m unittest test_itzma.py
+      run:  pytest
     - name: Upload coverage reports to Codecov
       run: |
         # Replace `linux` below with the appropriate OS
