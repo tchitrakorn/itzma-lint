@@ -2,7 +2,7 @@ from typing import NamedTuple
 
 
 class Flake8ASTErrorInfo(NamedTuple):
-    line_number: int
-    offset: int
-    msg: str
-    cls: type
+    line_number = None
+    offset = None
+    msg = None
+    cls = None
