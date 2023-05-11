@@ -8,6 +8,7 @@ develop:
 	python -m pip install check-manifest
 	python -m pip install black
 	python -m pip install mypy
+	python -m pip install inflection
 
 build:
 	python setup.py build build_ext --inplace
