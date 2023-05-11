@@ -24,6 +24,30 @@ Of course, ITZMA also contains traditional features, such as:
 
 ITZMA is a linter that lets you decide how your code will look and helps you enforce those rules!
 
+<h2>Installation and Usage</h1>
+
+I'm excited to share Itzma with everyone!
+To use Itzma locally, please install the following dependencies:
+* flake8
+* ast
+* inflection
+* nltk
+
+For development purposes, please also install:
+* pylint
+* coverage
+* black
+* check-manifest
+
+To use Itzma to check your Python file, simply run the following in your terminal in the appropriate directory:
+
+```
+flake8  <filename>
+```
+
+A message will be printed for each Itzma check that was not passed!
+For more information about Itzma checks and error messages, check out checks.py.
+
 <br>
 <br>
 
