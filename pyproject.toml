@@ -7,7 +7,7 @@ requires = [
 build-backend="setuptools.build_meta"
 
 [project]
-name = "Itzma Lint"
+name = "itzma-lint"
 authors = [{name = "Tattie Chitrakorn", email = "tc3117@columbia.edu"}]
 description="A customized linter for personal use"
 readme = "README.md"
