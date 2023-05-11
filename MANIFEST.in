@@ -6,3 +6,6 @@ include LICENSE
 include README.md
 recursive-include src *.py
 include .bumpversion.cfg
+include *.py
+include *.txt
+include .flake8
