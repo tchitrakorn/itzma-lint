@@ -3,11 +3,11 @@ from typing import NamedTuple
 from inflection import camelize, pluralize
 
 
-class Flake8ASTErrorInfo:
-    line_number = None
-    offset = None
-    msg = None
-    cls = None
+class Flake8ASTErrorInfo(NamedTuple):
+    line_number: int
+    offset: int
+    msg: str
+    cls: type
 
 
 class LocalImportsNotAllowed:
@@ -32,7 +32,9 @@ class UnconventionalFunctionNamesNotAllowed:
                 func_name = child.name
                 # camelcase check:
                 if not camelize(func_name, uppercase_first_letter=False) == func_name:
-                    err = Flake8ASTErrorInfo(child.lineno, child.col_offset, cls.msg1, cls)
+                    err = Flake8ASTErrorInfo(
+                        child.lineno, child.col_offset, cls.msg1, cls
+                    )
                     errors.append(err)
 
 
@@ -45,7 +47,9 @@ class UnconventionalClassNamesNotAllowed:
             if isinstance(child, ast.ClassDef):
                 class_name = child.name
                 if not camelize(class_name, uppercase_first_letter=True) == class_name:
-                    err = Flake8ASTErrorInfo(child.lineno, child.col_offset, cls.msg, cls)
+                    err = Flake8ASTErrorInfo(
+                        child.lineno, child.col_offset, cls.msg, cls
+                    )
                     errors.append(err)
 
 
@@ -57,6 +61,10 @@ class UnconventionalVariableNamesNotAllowed:
         for child in ast.walk(node):
             if isinstance(child, ast.Assign):  # check assignment
                 if isinstance(child.value, ast.List):  # if the value is a list
-                    if pluralize(child.targets[0].id) == child.targets[0].id:  # and the name is not plural
-                        err = Flake8ASTErrorInfo(child.lineno, child.col_offset, cls.msg, cls)
+                    if (
+                        pluralize(child.targets[0].id) == child.targets[0].id
+                    ):  # and the name is not plural
+                        err = Flake8ASTErrorInfo(
+                            child.lineno, child.col_offset, cls.msg, cls
+                        )
                         errors.append(err)

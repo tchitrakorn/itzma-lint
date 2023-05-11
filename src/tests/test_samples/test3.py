@@ -1,5 +1,6 @@
 # test UnconventionalClassNamesNotAllowed class
 
+
 class test_class:
     x = 5
 
