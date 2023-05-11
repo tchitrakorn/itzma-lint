@@ -4,6 +4,8 @@
 
 ![GitHub](https://img.shields.io/github/license/tchitrakorn/itzma-lint)
 ![GitHub issues](https://img.shields.io/github/issues/tchitrakorn/itzma-lint)
+[![Itzma workflow](https://github.com/tchitrakorn/itzma-lint/actions/workflows/test.yml/badge.svg)](https://github.com/tchitrakorn/itzma-lint/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/tchitrakorn/itzma-lint/branch/main/graph/badge.svg?token=46KL4N7H8P)](https://codecov.io/gh/tchitrakorn/itzma-lint)
 
 <h2>Overview</h1>
 
