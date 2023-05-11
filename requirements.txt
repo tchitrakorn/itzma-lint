@@ -1,0 +1,4 @@
+flake8
+inflection~=0.5.1
+pytest
+nltk~=3.8.1

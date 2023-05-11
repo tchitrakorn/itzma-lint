@@ -10,7 +10,9 @@ class MCodingASTVisitor(ast.NodeVisitor):
     def visit_FunctionDef(self, node: ast.FunctionDef):  # find all function nodes
         checks.LocalImportsNotAllowed.check(node, self.errors)
         checks.UnconventionalFunctionNamesNotAllowed.check(node, self.errors)
-        checks.UnconventionalFunctionNamesNotAllowed.checkFirstWordIsVerb(node, self.errors)
+        checks.UnconventionalFunctionNamesNotAllowed.checkFirstWordIsVerb(
+            node, self.errors
+        )
         checks.UnconventionalVariableNamesNotAllowed.check(node, self.errors)
         self.generic_visit(node)
 
@@ -21,8 +23,8 @@ class MCodingASTVisitor(ast.NodeVisitor):
 
 class ItzmaASTPlugin:
 
-    name = 'flake8_mcoding_ast'
-    version = '0.0.0'
+    name = "flake8_mcoding_ast"
+    version = "0.0.0"
 
     def __init__(self, tree: ast.AST):
         self._tree = tree
