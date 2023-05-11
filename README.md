@@ -33,11 +33,10 @@ To use Itzma locally, please install the following dependencies:
 * inflection
 * nltk
 
-For development purposes, please also install:
-* pylint
-* coverage
-* black
-* check-manifest
+Use the following command to install the dependencies:
+```
+pip install <library name>
+```
 
 To use Itzma to check your Python file, simply run the following in your terminal in the appropriate directory:
 
