@@ -13,7 +13,7 @@ Description
    :parser: myst_parser.sphinx_
 
 Documentation
---------------------
+======================
 .. automodule:: checks
       :members:
 .. autoclass:: checks.LocalImportsNotAllowed
@@ -29,7 +29,22 @@ Documentation
    :maxdepth: 2
    :caption: Contents:
 
+Examples
+======================
 
+To check the formatting of file_sample.py, run the following command:
+
+   :code: flake8 file_sample.py
+
+To add or remove each linting, comment functions inside
+
+   :code: visit_functionDef()
+
+and
+
+   :code: visit_classDef()
+
+in the flake8_itzma.py
 
 Indices and tables
 ==================
