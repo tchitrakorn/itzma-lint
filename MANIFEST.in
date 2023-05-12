@@ -10,3 +10,4 @@ include *.py
 include *.txt
 include .flake8
 recursive-include docs *
+include *.json
