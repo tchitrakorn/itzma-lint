@@ -34,9 +34,15 @@ class Flake8ASTErrorInfo(NamedTuple):
 
 class LocalImportsNotAllowed:
     msg = "IM local imports are not allowed inside a function"
-
     @classmethod
     def check(cls, node: ast.FunctionDef, errors: list[Flake8ASTErrorInfo]) -> None:
+        """
+        Check if there's an import inside a function
+
+        Args:
+            node: ast.FunctionDef
+            errors: a list of errors found
+        """
         for child in ast.walk(node):
             if isinstance(child, (ast.Import, ast.ImportFrom)):
                 err = Flake8ASTErrorInfo(child.lineno, child.col_offset, cls.msg, cls)
@@ -49,6 +55,13 @@ class UnconventionalFunctionNamesNotAllowed:
 
     @classmethod
     def check(cls, node: ast.FunctionDef, errors: list[Flake8ASTErrorInfo]) -> None:
+        """
+        Check if a function name is a de-capitalized camel case
+
+        Args:
+            node: ast.FunctionDef
+            errors: a list of errors found
+        """
         for child in ast.walk(node):
             if isinstance(child, ast.FunctionDef):
                 func_name = child.name
@@ -63,6 +76,13 @@ class UnconventionalFunctionNamesNotAllowed:
     def checkFirstWordIsVerb(
         cls, node: ast.FunctionDef, errors: list[Flake8ASTErrorInfo]
     ) -> None:
+        """
+        Check if the first word in the function name is a verb
+
+        Args:
+            node: ast.FunctionDef
+            errors: a list of errors found
+        """
         for child in ast.walk(node):
             if isinstance(child, ast.FunctionDef):
                 func_name = child.name
@@ -86,6 +106,13 @@ class UnconventionalClassNamesNotAllowed:
 
     @classmethod
     def check(cls, node: ast.ClassDef, errors: list[Flake8ASTErrorInfo]) -> None:
+        """
+        Check if a class name is a capitalized camel case
+
+        Args:
+            node: ast.ClassDef
+            errors: a list of errors found
+        """
         for child in ast.walk(node):
             if isinstance(child, ast.ClassDef):
                 class_name = child.name
@@ -101,6 +128,13 @@ class UnconventionalVariableNamesNotAllowed:
 
     @classmethod
     def check(cls, node: ast.FunctionDef, errors: list[Flake8ASTErrorInfo]) -> None:
+        """
+        Check if a variable name assigned to a list is plural
+
+        Args:
+            node: ast.FunctionDef
+            errors: a list of errors found
+        """
         for child in ast.walk(node):
             if isinstance(child, ast.Assign):  # check assignment
                 if isinstance(child.value, ast.List):  # if the value is a list
