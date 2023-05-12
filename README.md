@@ -6,7 +6,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/tchitrakorn/itzma-lint)
 [![Itzma workflow](https://github.com/tchitrakorn/itzma-lint/actions/workflows/test.yml/badge.svg)](https://github.com/tchitrakorn/itzma-lint/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/tchitrakorn/itzma-lint/branch/main/graph/badge.svg?token=46KL4N7H8P)](https://codecov.io/gh/tchitrakorn/itzma-lint)
-
+[![PyPI](https://img.shields.io/pypi/v/itzma-lint)](https://pypi.org/project/itzma-lint/)
 <h2>Overview</h1>
 
 Do you love using a linter but want even more personalized rules? Building off a traditional lint, ITZMA offers additional features such as:
