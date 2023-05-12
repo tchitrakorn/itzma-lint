@@ -24,7 +24,7 @@ class MCodingASTVisitor(ast.NodeVisitor):
 class ItzmaASTPlugin:
 
     name = "flake8_mcoding_ast"
-    version = "0.0.0"
+    version = "0.1.1"
 
     def __init__(self, tree: ast.AST):
         self._tree = tree
