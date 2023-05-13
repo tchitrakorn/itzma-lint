@@ -8,12 +8,7 @@ class UnitTests(unittest.TestCase):
     def test_error_definition(self):  # unit test 0
         line_number, offset, msg, cls = 10, 2, "Testing Message", str
         error = helpers.Flake8ASTErrorInfo(line_number, offset, msg, cls)
-        assert (
-            error.line_number == 10
-            and error.offset == 2
-            and error.msg == "Testing Message"
-            and error.cls == str
-        )
+        assert error.line_number == 10 and error.offset == 2 and error.msg == "Testing Message" and error.cls == str
 
     def test_local_imports_not_allowed(self):  # unit test 1
         expected = {
@@ -91,7 +86,7 @@ class UnitTests(unittest.TestCase):
 class IntegrationTests(unittest.TestCase):
     def test_all_checks(self):  # integration test 1
         expected = {
-            "line_number": 5,
+            "line_number": 8,
             "offset": 0,
             "msg": "IM function names must be camel case with lowercase first letter",
         }

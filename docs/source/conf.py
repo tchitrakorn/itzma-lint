@@ -12,6 +12,7 @@
 #
 import os
 import sys
+
 sys.path.insert(0, os.path.abspath(os.path.join('..', '..', 'src')))
 
 
@@ -30,9 +31,8 @@ release = '0.1.1'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['myst_parser', 'sphinx.ext.autodoc', 'sphinx.ext.coverage','sphinx.ext.napoleon'
-]
-source_suffix = {'.rst':'restructuredtext','.md':'markdown'}
+extensions = ['myst_parser', 'sphinx.ext.autodoc', 'sphinx.ext.coverage', 'sphinx.ext.napoleon']
+source_suffix = {'.rst': 'restructuredtext', '.md': 'markdown'}
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -48,6 +48,7 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 import sphinx_rtd_theme
+
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
@@ -59,11 +60,17 @@ html_static_path = ['_static']
 import recommonmark
 from recommonmark.transform import AutoStructify
 
+
 def setup(app):
-    app.add_config_value('recommonmark_config',{
-        'url_resolver': lambda url: github_doc_root + url,
-        'auto_toc_tree_section': 'Contents',
-    }, True)
+    app.add_config_value(
+        'recommonmark_config',
+        {
+            'url_resolver': lambda url: github_doc_root + url,
+            'auto_toc_tree_section': 'Contents',
+        },
+        True,
+    )
     app.add_transform(AutoStructify)
+
 
 autoclass_content = 'both'

@@ -36,15 +36,13 @@ To check the formatting of file_sample.py, run the following command:
 
    :code: flake8 file_sample.py
 
-To add or remove each linting, comment functions inside
+To focus on CamelCase(IMC) or snake_case(IMS) add tag --select
 
-   :code: visit_functionDef()
+   :code: flake8 file_sample.py ---select=IMC
 
-and
+or
 
-   :code: visit_classDef()
-
-in the flake8_itzma.py
+   :code: flake8 file_sample.py ---select=IMS
 
 Indices and tables
 ==================

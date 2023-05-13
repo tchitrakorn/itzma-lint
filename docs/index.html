@@ -132,41 +132,11 @@ For more information about Itzma checks and error messages, check out checks.py.
 <section id="module-checks">
 <span id="documentation"></span><h1>Documentation<a class="headerlink" href="#module-checks" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="checks.Flake8ASTErrorInfo">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">checks.</span></span><span class="sig-name descname"><span class="pre">Flake8ASTErrorInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#checks.Flake8ASTErrorInfo" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create new instance of Flake8ASTErrorInfo(line_number, offset, msg, cls)</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="checks.Flake8ASTErrorInfo.cls">
-<span class="sig-name descname"><span class="pre">cls</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">type</span></em><a class="headerlink" href="#checks.Flake8ASTErrorInfo.cls" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alias for field number 3</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="checks.Flake8ASTErrorInfo.line_number">
-<span class="sig-name descname"><span class="pre">line_number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#checks.Flake8ASTErrorInfo.line_number" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alias for field number 0</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="checks.Flake8ASTErrorInfo.msg">
-<span class="sig-name descname"><span class="pre">msg</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#checks.Flake8ASTErrorInfo.msg" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alias for field number 2</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="checks.Flake8ASTErrorInfo.offset">
-<span class="sig-name descname"><span class="pre">offset</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#checks.Flake8ASTErrorInfo.offset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Alias for field number 1</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="checks.LocalImportsNotAllowed">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">checks.</span></span><span class="sig-name descname"><span class="pre">LocalImportsNotAllowed</span></span><a class="headerlink" href="#checks.LocalImportsNotAllowed" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
-<dt class="sig sig-object py" id="checks.LocalImportsNotAllowed.check">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FunctionDef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#checks.Flake8ASTErrorInfo" title="checks.Flake8ASTErrorInfo"><span class="pre">checks.Flake8ASTErrorInfo</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.LocalImportsNotAllowed.check" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="checks.LocalImportsNotAllowed.check_import_inside_function">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_import_inside_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FunctionDef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">helpers.Flake8ASTErrorInfo</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.LocalImportsNotAllowed.check_import_inside_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if there’s an import inside a function</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -184,8 +154,22 @@ For more information about Itzma checks and error messages, check out checks.py.
 <dt class="sig sig-object py" id="checks.UnconventionalFunctionNamesNotAllowed">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">checks.</span></span><span class="sig-name descname"><span class="pre">UnconventionalFunctionNamesNotAllowed</span></span><a class="headerlink" href="#checks.UnconventionalFunctionNamesNotAllowed" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
-<dt class="sig sig-object py" id="checks.UnconventionalFunctionNamesNotAllowed.check">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FunctionDef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#checks.Flake8ASTErrorInfo" title="checks.Flake8ASTErrorInfo"><span class="pre">checks.Flake8ASTErrorInfo</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.UnconventionalFunctionNamesNotAllowed.check" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="checks.UnconventionalFunctionNamesNotAllowed.check_first_word_in_function_name_is_verb">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_first_word_in_function_name_is_verb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FunctionDef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">helpers.Flake8ASTErrorInfo</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.UnconventionalFunctionNamesNotAllowed.check_first_word_in_function_name_is_verb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the first word in the function name is a verb</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> – ast.FunctionDef</p></li>
+<li><p><strong>errors</strong> – a list of errors found</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="checks.UnconventionalFunctionNamesNotAllowed.check_function_name_camel_case">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_function_name_camel_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FunctionDef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">helpers.Flake8ASTErrorInfo</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.UnconventionalFunctionNamesNotAllowed.check_function_name_camel_case" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if a function name is a de-capitalized camel case</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -198,9 +182,9 @@ For more information about Itzma checks and error messages, check out checks.py.
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="checks.UnconventionalFunctionNamesNotAllowed.checkFirstWordIsVerb">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">checkFirstWordIsVerb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FunctionDef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#checks.Flake8ASTErrorInfo" title="checks.Flake8ASTErrorInfo"><span class="pre">checks.Flake8ASTErrorInfo</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.UnconventionalFunctionNamesNotAllowed.checkFirstWordIsVerb" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if the first word in the function name is a verb</p>
+<dt class="sig sig-object py" id="checks.UnconventionalFunctionNamesNotAllowed.check_function_name_snake_case">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_function_name_snake_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FunctionDef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">helpers.Flake8ASTErrorInfo</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.UnconventionalFunctionNamesNotAllowed.check_function_name_snake_case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a function name is a snake case</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -217,8 +201,8 @@ For more information about Itzma checks and error messages, check out checks.py.
 <dt class="sig sig-object py" id="checks.UnconventionalClassNamesNotAllowed">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">checks.</span></span><span class="sig-name descname"><span class="pre">UnconventionalClassNamesNotAllowed</span></span><a class="headerlink" href="#checks.UnconventionalClassNamesNotAllowed" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
-<dt class="sig sig-object py" id="checks.UnconventionalClassNamesNotAllowed.check">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ClassDef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#checks.Flake8ASTErrorInfo" title="checks.Flake8ASTErrorInfo"><span class="pre">checks.Flake8ASTErrorInfo</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.UnconventionalClassNamesNotAllowed.check" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="checks.UnconventionalClassNamesNotAllowed.check_class_name_camel_case">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_class_name_camel_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ClassDef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">helpers.Flake8ASTErrorInfo</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.UnconventionalClassNamesNotAllowed.check_class_name_camel_case" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if a class name is a capitalized camel case</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -236,9 +220,51 @@ For more information about Itzma checks and error messages, check out checks.py.
 <dt class="sig sig-object py" id="checks.UnconventionalVariableNamesNotAllowed">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">checks.</span></span><span class="sig-name descname"><span class="pre">UnconventionalVariableNamesNotAllowed</span></span><a class="headerlink" href="#checks.UnconventionalVariableNamesNotAllowed" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
-<dt class="sig sig-object py" id="checks.UnconventionalVariableNamesNotAllowed.check">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FunctionDef</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#checks.Flake8ASTErrorInfo" title="checks.Flake8ASTErrorInfo"><span class="pre">checks.Flake8ASTErrorInfo</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.UnconventionalVariableNamesNotAllowed.check" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="checks.UnconventionalVariableNamesNotAllowed.check_last_word_in_variable_name_is_noun">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_last_word_in_variable_name_is_noun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Assign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">helpers.Flake8ASTErrorInfo</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.UnconventionalVariableNamesNotAllowed.check_last_word_in_variable_name_is_noun" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the last word in the variable name is a noun</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> – ast.FunctionDef</p></li>
+<li><p><strong>errors</strong> – a list of errors found</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="checks.UnconventionalVariableNamesNotAllowed.check_variable_name_camel_case">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_variable_name_camel_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Assign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">helpers.Flake8ASTErrorInfo</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.UnconventionalVariableNamesNotAllowed.check_variable_name_camel_case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a function name is a de-capitalized camel case</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> – ast.FunctionDef</p></li>
+<li><p><strong>errors</strong> – a list of errors found</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="checks.UnconventionalVariableNamesNotAllowed.check_variable_name_plurality">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_variable_name_plurality</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Assign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">helpers.Flake8ASTErrorInfo</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.UnconventionalVariableNamesNotAllowed.check_variable_name_plurality" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if a variable name assigned to a list is plural</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> – ast.FunctionDef</p></li>
+<li><p><strong>errors</strong> – a list of errors found</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="checks.UnconventionalVariableNamesNotAllowed.check_variable_name_snake_case">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_variable_name_snake_case</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Assign</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">helpers.Flake8ASTErrorInfo</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#checks.UnconventionalVariableNamesNotAllowed.check_variable_name_snake_case" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if a function name is a snake case</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -264,23 +290,22 @@ For more information about Itzma checks and error messages, check out checks.py.
 </dd>
 </dl>
 </div></blockquote>
-<p>To add or remove each linting, comment functions inside</p>
+<p>To focus on CamelCase(IMC) or snake_case(IMS) add tag –select</p>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">code<span class="colon">:</span></dt>
-<dd class="field-odd"><p>visit_functionDef()</p>
+<dd class="field-odd"><p>flake8 file_sample.py —select=IMC</p>
 </dd>
 </dl>
 </div></blockquote>
-<p>and</p>
+<p>or</p>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">code<span class="colon">:</span></dt>
-<dd class="field-odd"><p>visit_classDef()</p>
+<dd class="field-odd"><p>flake8 file_sample.py —select=IMS</p>
 </dd>
 </dl>
 </div></blockquote>
-<p>in the flake8_itzma.py</p>
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
