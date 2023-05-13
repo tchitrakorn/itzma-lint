@@ -4,6 +4,10 @@
 
 ![GitHub](https://img.shields.io/github/license/tchitrakorn/itzma-lint)
 ![GitHub issues](https://img.shields.io/github/issues/tchitrakorn/itzma-lint)
+[![Itzma workflow](https://github.com/tchitrakorn/itzma-lint/actions/workflows/test.yml/badge.svg)](https://github.com/tchitrakorn/itzma-lint/actions/workflows/test.yml)
+[![codecov](https://codecov.io/gh/tchitrakorn/itzma-lint/branch/main/graph/badge.svg?token=46KL4N7H8P)](https://codecov.io/gh/tchitrakorn/itzma-lint)
+[![PyPI](https://img.shields.io/pypi/v/itzma-lint)](https://pypi.org/project/itzma-lint/)
+[![Docs](https://img.shields.io/badge/docs-link-blue)](https://tchitrakorn.github.io/itzma-lint/)
 
 <h2>Overview</h1>
 
@@ -21,6 +25,29 @@ Of course, ITZMA also contains traditional features, such as:
 * ... and more!
 
 ITZMA is a linter that lets you decide how your code will look and helps you enforce those rules!
+
+<h2>Installation and Usage</h1>
+
+I'm excited to share Itzma with everyone!
+To use Itzma locally, please install the following dependencies:
+* flake8
+* ast
+* inflection
+* nltk
+
+Use the following command to install the dependencies:
+```
+pip install <library name>
+```
+
+To use Itzma to check your Python file, simply run the following in your terminal in the appropriate directory:
+
+```
+flake8  <filename>
+```
+
+A message will be printed for each Itzma check that was not passed!
+For more information about Itzma checks and error messages, check out checks.py.
 
 <br>
 <br>
