@@ -11,7 +11,7 @@ name = "itzma-lint"
 authors = [{name = "Tattie Chitrakorn", email = "tc3117@columbia.edu"}]
 description="A customized linter for personal use"
 readme = "README.md"
-version="0.1.1"
+version="0.1.2"
 requires-python = ">=3.9"
 
 dependencies = ["flake8", "nltk", "inflection"]
