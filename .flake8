@@ -1,5 +1,6 @@
 [flake8]
 # other options
+extend-select = IMB
 
 [flake8:local-plugins]
 extension =

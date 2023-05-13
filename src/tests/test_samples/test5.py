@@ -1,3 +1,6 @@
+eat = "sushi"
+
+
 def printCat(cat):
     print(cat)
 
@@ -9,3 +12,4 @@ def Main():
 
 class cat:
     name = "default"
+    eat = "sushi"
