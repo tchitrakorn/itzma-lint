@@ -264,23 +264,22 @@ For more information about Itzma checks and error messages, check out checks.py.
 </dd>
 </dl>
 </div></blockquote>
-<p>To add or remove each linting, comment functions inside</p>
+<p>To focus on CamelCase(IMC) or snake_case(IMS) add tag –select</p>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">code<span class="colon">:</span></dt>
-<dd class="field-odd"><p>visit_functionDef()</p>
+<dd class="field-odd"><p>flake8 file_sample.py —select=IMC</p>
 </dd>
 </dl>
 </div></blockquote>
-<p>and</p>
+<p>or</p>
 <blockquote>
 <div><dl class="field-list simple">
 <dt class="field-odd">code<span class="colon">:</span></dt>
-<dd class="field-odd"><p>visit_classDef()</p>
+<dd class="field-odd"><p>flake8 file_sample.py —select=IMS</p>
 </dd>
 </dl>
 </div></blockquote>
-<p>in the flake8_itzma.py</p>
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
